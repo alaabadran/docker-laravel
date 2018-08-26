@@ -1,0 +1,23 @@
+version: "3.2"
+
+services:
+    web: 
+      build: nginx
+      ports: 
+        - 80:8080
+        - "3000:443"
+      expose:
+        - 80
+      links:
+        - db
+        - phpfpm
+      volumes: &appvolumes
+        - ./src:/var/www/html/laravel
+        - sockdata:/sock
+      depends_on:
+          - phpfpm
+    phpfpm:
+      build: phpfpm
+      volumes: *appvolumes
+volumes: 
+    sockdata:
