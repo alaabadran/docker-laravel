@@ -17,7 +17,7 @@ services:
       depends_on:
           - phpfpm
     phpfpm:
-      build: phpfpm
+      build: ./build/phpfpm/
       volumes: *appvolumes
 volumes: 
     sockdata:
