@@ -1,5 +1,5 @@
 # docker-laravel
-A docker image for Laravel using Docker Compose
+A docker image for Laravel using Docker Compose. Using Laravel 5.8
 
 ## How to install
 - Make sure you have Docker installed
